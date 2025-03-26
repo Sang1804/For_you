@@ -171,11 +171,12 @@
     }
 
     const inputField = document.getElementById('inputField');
-    const textToType = "Ngân Hà"; // thay đổi tên người yêu của bạn
+    const textToType = "Bẻo Nhii đáng iêuuu"; // thay đổi tên người yêu của bạn
     const typingSpeed = 100; // milliseconds per character
 
     let charIndex = 0;
     function typeText() {
+
         if (charIndex < textToType.length) {
             inputField.value += textToType.charAt(charIndex);
             charIndex++;
@@ -215,7 +216,7 @@
     // .textLetter text h2
     let indexText = 0;
     let textLetter = document.querySelector('.textLetter h2');
-    const textLetterH2 = "Gửi em!";
+    const textLetterH2 = "Chào Bé Nhi nhoo!";
     let timoutTextLetter;
 
     function textCharLetter(){
@@ -244,11 +245,22 @@
     let indexTextContent = 0;
     let textLetterContent = document.querySelector('.contentLetter');
     // thay đổi lời chúc
-    const textLetterP = "1 tuần có 7 ngày. 1 ngày có 24 giờ. 1 giờ có 60 phút. 1 phút có 60 giây. Không có một ngày hoặc giờ mà tôi không nhớ bạn. Không có giây phút nào mà anh không nghĩ đến cậu. Tâm hồn và trái tim tôi tràn ngập bạn. Nhớ và yêu em nhiều lắm.";
+    const textLetterP = `Gửi bé!
+Hôm nay là một ngày đặc biệt thì anh có tờ thư này gửi emmm.
+Lý do có lá thư này là vì anh muốn mời em tối nay đi date cùng anh.
+Thời gian: 18h00 giờ địa phương
+Địa điểm: Bí mật vì anh sẽ đưa em theo, hi vọng em sẽ đi và tận hưởng cùng anh. 
+Love you ❤️
+Sang Sai Đẹp Triêu!`;
+
     let timoutTextLetterContent;
     function textCharLetterContent(){
         if (indexTextContent < textLetterP.length) {
-            textLetterContent.textContent += textLetterP[indexTextContent];
+            if (textLetterP[indexTextContent] === '\n') {
+                textLetterContent.innerHTML += "<br>";
+            } else {
+                textLetterContent.innerHTML += textLetterP[indexTextContent];
+            }
             indexTextContent++;
             setTimeout(indexTextContent, 100);
         }
@@ -257,6 +269,7 @@
 
         }
     }
+    //document.querySelector(".contentLetter").innerHTML = textLetterP;
     function funcTimeoutLetterContent(){
         indexTextContent = 0; // Reset indexTextContent
         textLetterContent.textContent = ''; // Xóa nội dung hiện tại của textLetter
